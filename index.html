@@ -126,7 +126,6 @@ function lily(){
     s+='<path d="M0 0L'+x+' '+y+'" stroke="#c9b27a" stroke-width="1.4"/><ellipse cx="'+x+'" cy="'+y+'" rx="2.6" ry="5.5" transform="rotate('+(i-2.5)*16+' '+x+' '+y+')" fill="#d9822b"/>';}
   return petal(0,1,0)+petal(60,.92,1)+petal(120,1,2)+petal(180,.92,3)+petal(240,1,4)+petal(300,.92,5)+'<g class="pt" style="--n:6">'+s+'</g>';
 }
-// type, color, x, y, scale, rotation (back to front)
 var F=[
  ['r','red',200,150,1.0,0],['l','',115,205,.66,-28],['l','',288,208,.66,26],
  ['r','pink',55,292,.88,-25],['r','white',346,292,.88,25],['r','red',140,285,.95,-18],
@@ -143,7 +142,6 @@ for(i=0;i<F.length;i++){
 document.getElementById('stems').innerHTML=st;
 document.getElementById('fls').innerHTML=fl;
 
-// small leaves in pairs along each stem, placed from the real curve
 var lv='',ps=document.querySelectorAll('#stems path'),fr=[.5,.66,.82],len,p1,p2,b,s,j,m;
 for(j=0;j<ps.length;j++){
   len=ps[j].getTotalLength();
@@ -155,12 +153,10 @@ for(j=0;j<ps.length;j++){
 }
 document.getElementById('lvs').innerHTML=lv;
 
-// big silver leaves at the base
 var L=[[-64,1.3,3],[-48,1.3,3.8],[-32,1.3,4.8],[-14,1.1,5.2],[14,1.1,5.2],[32,1.3,4.8],[48,1.3,3.8],[64,1.3,3]],bg='';
 for(i=0;i<L.length;i++)bg+='<path class="big" d="M0 0C12-14 12-40 0-62C-12-40-12-14 0 0Z" fill="url(#sg)" fill-opacity=".85" style="--a:'+L[i][0]+'deg;--sx:'+L[i][1]+';--sy:'+L[i][2]*.75+';--t:'+(1.4+i*.08)+'s"/>';
 document.getElementById('big').innerHTML=bg;
 
-// green grass blades
 var gr='',x,h,l;
 for(i=0;i<18;i++){
   x=200+(i%2?1:-1)*(35+Math.random()*135);h=50+Math.random()*100;l=(Math.random()*40-20);
@@ -168,7 +164,6 @@ for(i=0;i<18;i++){
 }
 document.getElementById('grass').innerHTML=gr;
 
-// floating sparks
 var rain='',pc=['#fff3a8','#ffffff','#ffe27a'];
 for(i=0;i<26;i++)rain+='<i style="left:'+(25+Math.random()*50)+'%;background:'+pc[i%3]+';--g:'+pc[i%3]+';--dx:'+(Math.random()*160-80)+'px;animation-duration:'+(9+Math.random()*9)+'s;animation-delay:-'+(Math.random()*14)+'s"></i>';
 document.getElementById('rain').innerHTML=rain;
